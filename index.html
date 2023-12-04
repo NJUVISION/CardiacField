@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CardiacField aims to produce high-fidelity 3D heart and to automatically estimate heart function using only low cost 2D echocardiogram probes.">
+  <meta name="keywords" content="CardiacField,Echocardiograph,Computational imaging,3D heart,Ejection Fraction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CardiacField: Computational Echocardiography for Universal Screening</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://cshennju.github.io/NeuralCMF.github.io/">
+            Tracking Anything in Heart All at Once
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CardiacField: Computational Echocardiography for Universal Screening</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://vision.nju.edu.cn/2c/f1/c29471a535793/page.htm">Chengkang Shen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://pakfa.github.io/zhuhao_photo.github.io/">Hao Zhu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://zhouyou-nju.github.io/">You Zhou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yu Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Si Yi</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Lili Dong</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Weipeng Zhao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.optics.arizona.edu/person/david-brady">David J. Brady</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Xun Cao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm">Zhan Ma</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yi Lin</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Nanjing University,</span>
+            <span class="author-block"><sup>2</sup>Fudan University,</span>
+            <span class="author-block"><sup>3</sup>University of Arizona</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://www.researchsquare.com/article/rs-2509563"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/cshennju/CardiacField"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/Supplementary_video_3.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Cardiovascular diseases, the worldwide leading cause of death, are preventable and treatable.
+            Early diagnosis and monitoring using ultrasound, x-ray or MRI are crucial clinical tools. 
+            Routine imaging is, however, currently cost prohibitive. Here we  demonstrate the use of  computational imaging  
+            to reduce the cost of  tomographic echocardiography by &gt;1000 &times; while also improving image quality and diagnostic utility. 
+            This advance relies on decompressive inference using artificial neural networks. Our system, CardiacField, utilizes 2DE probes 
+            to provide accurate and automated assessments of cardiac function, eliminating the need for specialized professional training. 
+            CardiacField generates a 3D heart from 2D echocardiograms with &lt;2 minute processing time.  The system automatically segments 
+            and quantifies the volume of the left ventricle (LV) and right ventricle (RV) without manual calibration. CardiacField estimates 
+            the left ventricular ejection fraction (LVEF) with 48% higher accuracy than state-of-the-art video-based methods, and 
+            the right ventricular ejection fraction (RVEF) with a similar accuracy, which is not available in existing 2DE methods. 
+            This technology will enable routine world-wide tomographic heart screening, such that patients will get instant feedback 
+            on lifestyle changes that improve heart health. CardiacField also illustrates the value of a conceptual shift in diagnostic imaging from 
+            direct physical model inversion to Bayesian inference.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The workflow of the CardiacField</h2>
+        <div class="publication-video">
+          <iframe src="//player.bilibili.com/player.html?aid=706537804&bvid=BV1gQ4y1x7j6&cid=1350590957&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        </div>
+        <img src="./static/images/Figures1.png" alt="Description of the image">
+        <figcaption style="text-align: justify;">The workflow of the CardiacField and EF calculation. (a) The whole 3D heart is represented as an implicit function, 
+          where the input is a 3D coordinate of the heart and the output is the corresponding intensity. This continuous 3D function is 
+          approximated by an MLP network with multiresolution hash-table. The implicit function is determined by minimizing a physical-informed 
+          loss function. (b) 2D echocardiographic images are acquired by rotating the 2DE probe in 360 degrees around the apex of the heart. 
+          Then we synchronize multiple cardiac views and select images at end-diastole and end-systole based on concurrently recorded ECG. 
+          (c) The 3D rendering of the reconstructed heart by the CardiacField. (d) The CardiacField represents a 3D heart in a continuous implicit function, 
+          leading to less artifacts in slices compared with the conventional interpolation as indicated by the yellow arrows. 
+          (e) The workflow of EF calculation based on the CardiacField. We first perform the uniform sampling on the reconstructed 3D heart to generate about 20-30, 
+          3mm-thick 2D slices parallel to the apical four-chamber view, and then use the segmentation model developed in EchoNet to classify the LV and RV regions. 
+          We calculate the volumes of the LV and RV by summing the area of each slice. The EF is defined as the ratio of changes in the ESV and EDV of LV/RV. 
+          (MLP: multilayer perceptron. ECG: electrocardiogram. LV: left ventricular. RV: right ventricular. ESV: end-systolic volume. EDV: end-diastolic volume.)</figcaption>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- <div class="columns is-centered"> -->
+
+      <!-- Visual Effects. -->
+      <!-- <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div> -->
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <!-- <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div> -->
+
+        <!-- </div>
+      </div>
+    </div> -->
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/> -->
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Volume segmentation and analysis of LVEF and RVEF</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/Figures2.png" alt="Description of the image" width="100%">
+          <figcaption style="text-align: justify;">(a) We use the CardiacField to reconstruct realistic 3D heart with real-captured 2D echocardiographic images. 
+            (b) We compare the same cross-sectional views (apical four-chamber view) between the reconstructed hearts by CardiacField 
+            and the real-captured ones by the 3D probe for 10 independent patients. The 3D cardiac volumes reconstructed by Our CardiacField 
+            exhibit more spatial details and less artifacts than those rendered by the 3DE probe. (c) We compare our LVEF results with EchoNet, 
+            where the EFs obtained by the 3D ultrasound machine (after calibration by the experienced sonographers) are set as the ground truth. 
+            The red and blue lines represent the least squares regression line between model prediction and ground truth, respectively. 
+            Our method provides more accurate LVEF prediction with over 48% improvement. (d) We also calculate the RVEF results, which is not 
+            available in general for 2DE-based methods like EchoNet. (e) We reconstruct the 3D hearts and calculate the EFs for another 5 volunteers 
+            using 2D images from two different 2D ultrasound machines widely used in clinics. We can achieve stable results for different machines, 
+            which demonstrate the generalization ability of our method.</figcaption>
+        </div>
+        <!--/ Re-rendering. -->
+        <h3 class="title is-4">3D dynamic heart within one cardiac cycle</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/Figures3.png" alt="Description of the image" width="75%">
+          <figcaption style="text-align: justify;">We show some snapshots of a reconstructed 3D dynamic heart within one cardiac cycle using the CardiacField, compared with that 
+            acquired by the 3DE probe. The ECG is used to indicate the phases within one cardiac cycle.</figcaption>
+        </div>
+
+        <h3 class="title is-4">Analysis of 3D reconstruction</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/Figures4.png" alt="Description of the image" width="100%">
+          <figcaption style="text-align: justify;">(a) Visualization of the positional parameter trajectories. The initial and refined positional parameters are obtained using PlaneInVol 
+            and CardiacField, respectively. (b) We compare the real-captured 3D heart (as ground truth) with the reconstructed 3D hearts by the CardiacField and 
+            the conventional interpolation method. The CardiacField and interpolation method use 'Input Views' for 3D heart reconstruction. For PSNR, higher values 
+            indicate better performance. 'Long-Axis', 'Short-Axis' and '3D Volume' denote the evaluation scores for newly generated cardiac long-axis views, newly 
+            generated cardiac short-axis views and reconstructed 3D heart, respectively. (c) Illustration of the 'continuous-slicing' functionality of our CardiacField 
+            compared to the conventional interpolation method. The same views are extracted for different methods. From top to bottom, the cross-sectional views of 
+            real-captured 3D heart, the interpolation method (without position refinement) and our CardiacField. The CardiacField is able to generate arbitrary 
+            views while avoiding interpolation artifacts highlighted by yellow arrows.</figcaption>
+        </div>
+
+        <h3 class="title is-4">Volume Segmentation Results</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/videos/Supplementary_video_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{shen2023cardiacfield,
+  author    = {Shen, Chengkang and Zhu, Hao and Zhou, You and Liu, Yu and Yi, Si and Dong, Lili and Zhao, Weipeng and Brady, David and Cao, Xun and Ma, Zhan and Lin, Yi},
+  title     = {CardiacField: Computational Echocardiography for Universal Screening},
+  journal   = {Research Square},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
