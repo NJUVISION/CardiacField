@@ -88,7 +88,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CardiacField: Computational Echocardiography for Universal Screening</h1>
+          <h1 class="title is-1 publication-title">CardiacField: Computational Echocardiography for Automated Heart Function Estimation Using 2DE Probes</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://vision.nju.edu.cn/2c/f1/c29471a535793/page.htm">Chengkang Shen</a><sup>1</sup>,</span>
@@ -232,19 +232,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Cardiovascular diseases, the worldwide leading cause of death, are preventable and treatable.
-            Early diagnosis and monitoring using ultrasound, x-ray or MRI are crucial clinical tools. 
-            Routine imaging is, however, currently cost prohibitive. Here we  demonstrate the use of  computational imaging  
-            to reduce the cost of  tomographic echocardiography by &gt;1000 &times; while also improving image quality and diagnostic utility. 
-            This advance relies on decompressive inference using artificial neural networks. Our system, CardiacField, utilizes 2DE probes 
-            to provide accurate and automated assessments of cardiac function, eliminating the need for specialized professional training. 
-            CardiacField generates a 3D heart from 2D echocardiograms with &lt;2 minute processing time.  The system automatically segments 
-            and quantifies the volume of the left ventricle (LV) and right ventricle (RV) without manual calibration. CardiacField estimates 
-            the left ventricular ejection fraction (LVEF) with 48% higher accuracy than state-of-the-art video-based methods, and 
-            the right ventricular ejection fraction (RVEF) with a similar accuracy, which is not available in existing 2DE methods. 
-            This technology will enable routine world-wide tomographic heart screening, such that patients will get instant feedback 
-            on lifestyle changes that improve heart health. CardiacField also illustrates the value of a conceptual shift in diagnostic imaging from 
-            direct physical model inversion to Bayesian inference.
+            Background: Accurate heart function estimation is vital for detecting and monitoring cardiovascular diseases. While two-dimensional echocardiography (2DE) is widely accessible and used, it requires specialized training, is prone to inter-observer variability, and lacks comprehensive three-dimensional (3D) information.
+            Aim: We introduce CardiacField, a computational echocardiography system using a 2DE probe for precise, automated left ventricular (LV) and right ventricular (RV) ejection fraction (EF) estimations, especially easy-to-use for non-cardiovascular health care practitioners. We assess the system's usability among amateur users and evaluate its performance against expert interpretations and advanced deep learning tools.
+            Methods: We developed an implicit neural representation network to reconstruct a 3D cardiac volume from sequential multi-view 2D echocardiographic images, followed by automatic segmentation of left ventricular (LV) and right ventricular (RV) areas to calculate volume sizes and ejection fraction (EF) values. Our study involved 127 patients to assess EF estimation accuracy against expert readings and 2D video-based deep learning models. A subset of 56 patients was utilized to evaluate image quality and 3D accuracy, and another 50 to test usability by amateurs and across various ultrasound machines.
+            Results: CardiacField generates a 3D heart from 2D echocardiograms with &lt;2 minute processing time. The LVEF predicted by our method has a mean absolute error (MAE) of 2.48%, while the RVEF has an MAE of 2.65%.
+            Conclusions: Employing a straightforward apical ring scan with a cost-effective 2DE probe, our method achieves a level of EF accuracy for assessing LV and RV function that is comparable to that of 3DE probes.
           </p>
         </div>
       </div>
